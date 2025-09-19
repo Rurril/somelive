@@ -55,25 +55,25 @@ export function NewHeroSection() {
   };
 
   return (
-    <section className="relative min-h-screen overflow-hidden bg-gradient-to-br from-gray-950 via-purple-950/20 to-pink-950/30">
+    <section className="relative min-h-screen overflow-hidden bg-gradient-to-br from-gray-950 via-green-950/20 to-teal-950/30">
       {/* Background Effects */}
       <div className="absolute inset-0">
         {/* Gradient Orbs */}
-        <div className="absolute top-1/4 -left-48 w-96 h-96 bg-gradient-to-r from-pink-500/20 to-purple-600/20 rounded-full blur-3xl animate-pulse" />
-        <div className="absolute bottom-1/4 -right-48 w-96 h-96 bg-gradient-to-r from-cyan-500/20 to-blue-600/20 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '2s' }} />
+        <div className="absolute top-1/4 -left-48 w-96 h-96 bg-gradient-to-r from-emerald-500/20 to-lime-600/20 rounded-full blur-3xl animate-pulse" />
+        <div className="absolute bottom-1/4 -right-48 w-96 h-96 bg-gradient-to-r from-teal-500/20 to-green-600/20 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '2s' }} />
         
         {/* Floating Elements */}
         <motion.div 
-          className="absolute top-20 right-20 w-3 h-3 bg-pink-400 rounded-full opacity-60"
+          className="absolute top-20 right-20 w-3 h-3 bg-lime-400 rounded-full opacity-60"
           animate={floatingVariants.float}
         />
         <motion.div 
-          className="absolute top-1/3 left-20 w-2 h-2 bg-cyan-400 rounded-full opacity-60"
+          className="absolute top-1/3 left-20 w-2 h-2 bg-teal-400 rounded-full opacity-60"
           animate={floatingVariants.float}
           style={{ animationDelay: '1s' }}
         />
         <motion.div 
-          className="absolute bottom-1/3 right-1/4 w-4 h-4 bg-purple-400 rounded-full opacity-40"
+          className="absolute bottom-1/3 right-1/4 w-4 h-4 bg-green-400 rounded-full opacity-40"
           animate={floatingVariants.float}
           style={{ animationDelay: '3s' }}
         />
@@ -90,10 +90,10 @@ export function NewHeroSection() {
         >
           {/* Badge */}
           <motion.div
-            className="inline-flex items-center gap-2 bg-gradient-to-r from-pink-500/10 to-purple-500/10 backdrop-blur-sm border border-pink-500/20 rounded-full px-4 py-2"
+            className="inline-flex items-center gap-2 bg-gradient-to-r from-emerald-500/10 to-lime-500/10 backdrop-blur-sm border border-emerald-500/20 rounded-full px-4 py-2"
             variants={itemVariants}
           >
-            <div className="w-2 h-2 bg-gradient-to-r from-pink-400 to-purple-400 rounded-full animate-pulse" />
+            <div className="w-2 h-2 bg-gradient-to-r from-emerald-400 to-lime-400 rounded-full animate-pulse" />
             <span className="text-sm font-medium text-gray-300">2025 트렌드 매거진</span>
           </motion.div>
 
@@ -103,7 +103,7 @@ export function NewHeroSection() {
             variants={itemVariants}
           >
             <span className="block text-white mb-2">사랑도</span>
-            <span className="block bg-gradient-to-r from-pink-400 via-purple-400 to-cyan-400 bg-clip-text text-transparent">
+            <span className="block bg-gradient-to-r from-emerald-400 via-green-400 to-teal-400 bg-clip-text text-transparent">
               트렌드가
             </span>
             <span className="block text-white">있다</span>
@@ -115,7 +115,7 @@ export function NewHeroSection() {
             variants={itemVariants}
           >
             썸부터 비연애까지,{" "}
-            <span className="text-transparent bg-gradient-to-r from-pink-300 to-purple-300 bg-clip-text font-medium">
+            <span className="text-transparent bg-gradient-to-r from-emerald-300 to-green-300 bg-clip-text font-medium">
               20대의 모든 관계
             </span>
             를 해석하는 매거진
@@ -128,7 +128,7 @@ export function NewHeroSection() {
           >
             <Link href="/trends" passHref>
               <motion.button
-                className="group relative bg-gradient-to-r from-pink-500 to-purple-600 text-white font-bold py-4 px-10 rounded-2xl text-lg shadow-2xl hover:shadow-pink-500/25 transition-all duration-300 overflow-hidden"
+                className="group relative bg-gradient-to-r from-emerald-500 to-lime-600 text-white font-bold py-4 px-10 rounded-2xl text-lg shadow-2xl hover:shadow-emerald-500/25 transition-all duration-300 overflow-hidden"
                 whileHover={{ scale: 1.02, y: -2 }}
                 whileTap={{ scale: 0.98 }}
               >
@@ -142,18 +142,18 @@ export function NewHeroSection() {
                     →
                   </motion.span>
                 </span>
-                <div className="absolute inset-0 bg-gradient-to-r from-pink-600 to-purple-700 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                <div className="absolute inset-0 bg-gradient-to-r from-emerald-600 to-lime-700 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               </motion.button>
             </Link>
             
             <Link href="/about" passHref>
               <motion.button
-                className="group relative bg-transparent border-2 border-cyan-400/50 text-cyan-300 font-bold py-4 px-10 rounded-2xl text-lg hover:bg-cyan-400/5 backdrop-blur-sm transition-all duration-300 overflow-hidden"
+                className="group relative bg-transparent border-2 border-teal-400/50 text-teal-300 font-bold py-4 px-10 rounded-2xl text-lg hover:bg-teal-400/5 backdrop-blur-sm transition-all duration-300 overflow-hidden"
                 whileHover={{ scale: 1.02, y: -2 }}
                 whileTap={{ scale: 0.98 }}
               >
                 <span className="relative z-10">지금 시작하기</span>
-                <div className="absolute inset-0 bg-gradient-to-r from-cyan-400/10 to-blue-400/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                <div className="absolute inset-0 bg-gradient-to-r from-teal-400/10 to-green-400/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               </motion.button>
             </Link>
           </motion.div>
@@ -224,9 +224,9 @@ export function NewHeroSection() {
                 <div className="px-6 pb-4">
                   <div className="flex items-center justify-between">
                     <div className="flex items-center space-x-3">
-                      <div className="w-10 h-10 rounded-full bg-gradient-to-br from-pink-500 via-purple-500 to-indigo-500 p-0.5">
-                        <div className="w-full h-full rounded-full bg-gradient-to-br from-pink-400 to-purple-600 flex items-center justify-center">
-                          <span className="text-white font-bold text-lg">💕</span>
+                      <div className="w-10 h-10 rounded-full bg-gradient-to-br from-emerald-500 via-lime-500 to-green-500 p-0.5">
+                        <div className="w-full h-full rounded-full bg-gradient-to-br from-emerald-400 to-lime-600 flex items-center justify-center">
+                          <span className="text-white font-bold text-lg">🌿</span>
                         </div>
                       </div>
                       <div>
@@ -237,7 +237,7 @@ export function NewHeroSection() {
                         </div>
                       </div>
                     </div>
-                    <div className="flex space-x-3 text-blue-400">
+                    <div className="flex space-x-3 text-teal-400">
                       <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
                         <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" />
                       </svg>
@@ -273,9 +273,9 @@ export function NewHeroSection() {
                     initial="hidden"
                     animate="show"
                   >
-                    <div className="bg-gradient-to-r from-blue-500 to-purple-600 text-white rounded-3xl rounded-br-lg px-4 py-3 max-w-[80%] shadow-lg">
+                    <div className="bg-gradient-to-r from-teal-500 to-green-600 text-white rounded-3xl rounded-br-lg px-4 py-3 max-w-[80%] shadow-lg">
                       <p className="text-sm leading-relaxed">응, 트렌드가 너무 빨라 ㅠㅠ</p>
-                      <div className="text-xs text-blue-100 mt-1 text-right">오후 2:15</div>
+                      <div className="text-xs text-teal-100 mt-1 text-right">오후 2:15</div>
                     </div>
                   </motion.div>
 
@@ -301,9 +301,9 @@ export function NewHeroSection() {
                     initial="hidden"
                     animate="show"
                   >
-                    <div className="bg-gradient-to-r from-pink-500 to-purple-600 text-white rounded-3xl rounded-br-lg px-4 py-3 max-w-[80%] shadow-lg">
+                    <div className="bg-gradient-to-r from-emerald-500 to-lime-600 text-white rounded-3xl rounded-br-lg px-4 py-3 max-w-[80%] shadow-lg">
                       <p className="text-sm leading-relaxed">오, 진짜? 기대된다! 💖</p>
-                      <div className="text-xs text-pink-100 mt-1 text-right">오후 2:17</div>
+                      <div className="text-xs text-emerald-100 mt-1 text-right">오후 2:17</div>
                     </div>
                   </motion.div>
 
@@ -330,8 +330,8 @@ export function NewHeroSection() {
             </div>
 
             {/* Enhanced Glow Effects */}
-            <div className="absolute -inset-6 bg-gradient-to-r from-pink-500/20 via-purple-500/20 to-cyan-500/20 rounded-[4rem] blur-3xl -z-10" />
-            <div className="absolute -inset-2 bg-gradient-to-r from-pink-400/10 to-purple-600/10 rounded-[4rem] blur-xl -z-10 animate-pulse" />
+            <div className="absolute -inset-6 bg-gradient-to-r from-emerald-500/20 via-green-500/20 to-teal-500/20 rounded-[4rem] blur-3xl -z-10" />
+            <div className="absolute -inset-2 bg-gradient-to-r from-emerald-400/10 to-lime-600/10 rounded-[4rem] blur-xl -z-10 animate-pulse" />
           </div>
         </motion.div>
       </div>

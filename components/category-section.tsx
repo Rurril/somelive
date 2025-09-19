@@ -7,19 +7,19 @@ const categories = [
     icon: MapPin,
     title: "데이트 코스",
     description: "이번 주말, 여기 어때요?",
-    gradient: "from-pink-500 via-red-500 to-orange-500",
-    bgGradient: "from-pink-50 to-red-50",
-    borderGradient: "from-pink-200 to-red-200",
-    emoji: "🗺️",
+    gradient: "from-lime-600 via-emerald-700 to-stone-800",
+    bgGradient: "from-stone-50 to-lime-50",
+    borderGradient: "from-stone-200 to-lime-200",
+    emoji: "🌲",
     href: "#",
   },
   {
     icon: BrainCircuit,
     title: "연애 심리 테스트",
     description: "나는 어떤 연애 스타일일까?",
-    gradient: "from-emerald-500 via-teal-500 to-cyan-500",
-    bgGradient: "from-emerald-50 to-teal-50",
-    borderGradient: "from-emerald-200 to-teal-200",
+    gradient: "from-lime-400 via-green-500 to-teal-600",
+    bgGradient: "from-green-50 to-teal-50",
+    borderGradient: "from-green-200 to-teal-200",
     emoji: "🧠",
     href: "#",
   },
@@ -27,9 +27,9 @@ const categories = [
     icon: MessageCircleQuestion,
     title: "고민 상담소",
     description: "다른 사람들은 어떻게 생각해?",
-    gradient: "from-purple-500 via-violet-500 to-indigo-500",
-    bgGradient: "from-purple-50 to-violet-50",
-    borderGradient: "from-purple-200 to-violet-200",
+    gradient: "from-stone-400 via-yellow-600 to-orange-700",
+    bgGradient: "from-stone-50 to-orange-50",
+    borderGradient: "from-stone-200 to-orange-200",
     emoji: "💭",
     href: "#",
   },
@@ -37,9 +37,9 @@ const categories = [
     icon: Sparkles,
     title: "최신 트렌드",
     description: "MBTI는 끝났다! 새로운 궁합 트렌드",
-    gradient: "from-yellow-500 via-pink-500 to-purple-500",
-    bgGradient: "from-yellow-50 to-pink-50",
-    borderGradient: "from-yellow-200 to-pink-200",
+    gradient: "from-teal-800 via-green-800 to-lime-800",
+    bgGradient: "from-teal-50 to-green-50",
+    borderGradient: "from-teal-200 to-green-200",
     emoji: "✨",
     href: "/trends",
   },
@@ -47,33 +47,33 @@ const categories = [
 
 export function CategorySection() {
   return (
-    <section className="py-20 px-6 bg-gradient-to-br from-gray-50 via-white to-blue-50/30 relative overflow-hidden">
+    <section className="py-20 px-6 bg-gradient-to-br from-stone-50 via-white to-lime-50/30 relative overflow-hidden">
       {/* Background Decorations */}
       <div className="absolute inset-0">
-        <div className="absolute top-20 -left-20 w-40 h-40 bg-gradient-to-r from-pink-200/30 to-purple-200/30 rounded-full blur-3xl animate-pulse" />
-        <div className="absolute bottom-20 -right-20 w-60 h-60 bg-gradient-to-r from-blue-200/30 to-cyan-200/30 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '2s' }} />
-        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-32 h-32 bg-gradient-to-r from-yellow-200/20 to-pink-200/20 rounded-full blur-2xl animate-pulse" style={{ animationDelay: '4s' }} />
+        <div className="absolute top-20 -left-20 w-40 h-40 bg-gradient-to-r from-green-200/30 to-teal-200/30 rounded-full blur-3xl animate-pulse" />
+        <div className="absolute bottom-20 -right-20 w-60 h-60 bg-gradient-to-r from-lime-200/30 to-emerald-200/30 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '2s' }} />
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-32 h-32 bg-gradient-to-r from-stone-200/20 to-lime-200/20 rounded-full blur-2xl animate-pulse" style={{ animationDelay: '4s' }} />
       </div>
 
       <div className="max-w-7xl mx-auto relative z-10">
         {/* Header */}
         <div className="text-center mb-20 animate-fade-in-up">
           {/* Badge */}
-          <div className="inline-flex items-center gap-2 bg-gradient-to-r from-pink-500/10 to-purple-500/10 backdrop-blur-sm border border-pink-200 rounded-full px-6 py-2 mb-8">
-            <div className="w-2 h-2 bg-gradient-to-r from-pink-400 to-purple-400 rounded-full animate-pulse" />
+          <div className="inline-flex items-center gap-2 bg-gradient-to-r from-emerald-500/10 to-green-500/10 backdrop-blur-sm border border-emerald-200 rounded-full px-6 py-2 mb-8">
+            <div className="w-2 h-2 bg-gradient-to-r from-emerald-400 to-green-400 rounded-full animate-pulse" />
             <span className="text-sm font-semibold text-gray-600">카테고리 탐색</span>
           </div>
 
           <h2 className="text-5xl md:text-6xl font-black tracking-tight mb-6">
             <span className="block text-gray-800 mb-2">어떤 걸</span>
-            <span className="bg-gradient-to-r from-pink-600 via-purple-600 to-blue-600 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-emerald-600 via-lime-600 to-green-600 bg-clip-text text-transparent">
               찾고 있나요?
             </span>
           </h2>
           
           <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed font-light">
             연애부터 데이트까지, 
-            <span className="font-medium text-transparent bg-gradient-to-r from-pink-500 to-purple-500 bg-clip-text">
+            <span className="font-medium text-transparent bg-gradient-to-r from-emerald-500 to-lime-500 bg-clip-text">
               {" "}당신의 로맨틱한 순간
             </span>
             을 더 특별하게 만들어드릴게요.
@@ -155,15 +155,13 @@ export function CategorySection() {
             더 많은 콘텐츠가 궁금하다면?
           </p>
           <Link href="/all-categories">
-            <button className="group bg-gradient-to-r from-pink-500 via-purple-500 to-blue-500 text-white font-bold px-8 py-4 rounded-full shadow-xl hover:shadow-2xl transition-all duration-300 relative overflow-hidden transform hover:scale-105 hover:-translate-y-1">
+            <button className="group bg-gradient-to-r from-emerald-500 via-lime-500 to-green-500 text-white font-bold px-8 py-4 rounded-full shadow-xl hover:shadow-2xl transition-all duration-300 relative overflow-hidden transform hover:scale-105 hover:-translate-y-1">
               <span className="relative z-10">전체 카테고리 보기</span>
-              <div className="absolute inset-0 bg-gradient-to-r from-pink-600 via-purple-600 to-blue-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+              <div className="absolute inset-0 bg-gradient-to-r from-emerald-600 via-lime-600 to-green-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
             </button>
           </Link>
         </div>
       </div>
-
-
     </section>
   )
 }

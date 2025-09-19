@@ -5,6 +5,7 @@ import Image from 'next/image';
 import { motion } from 'framer-motion';
 import CoreValue from '@/components/core-value';
 import Link from 'next/link';
+import { Header } from '@/components/header';
 
 // 텍스트 강조를 위한 컴포넌트 (마이크로 인터랙션)
 const HighlightedText = ({ children, color = "text-[#FF4D88]" }) => {
@@ -48,6 +49,7 @@ const AboutPage = () => {
 
   return (
     <div className="bg-black text-white min-h-screen font-sans">
+      <Header />
       {/* Hero Section */}
       <motion.div
         className="relative h-96 lg:h-[500px] overflow-hidden flex items-center justify-center p-4"

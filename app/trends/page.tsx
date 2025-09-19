@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import React, { useState } from "react";
 import { ChevronDown, ChevronUp, Search, Bookmark, Filter, Grid, List, TrendingUp, ArrowUp, ArrowDown } from "lucide-react";
 
 const trendItems = [
