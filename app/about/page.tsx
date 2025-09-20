@@ -6,6 +6,7 @@ import { motion } from 'framer-motion';
 import CoreValue from '@/components/core-value';
 import Link from 'next/link';
 import { Header } from '@/components/header';
+import { NewHeroSection } from '@/components/new-hero-section'; // NewHeroSection을 import 합니다.
 
 // 텍스트 강조를 위한 컴포넌트 (마이크로 인터랙션)
 const HighlightedText = ({ children, color = "text-[#FF4D88]" }) => {
@@ -31,53 +32,12 @@ const HighlightedText = ({ children, color = "text-[#FF4D88]" }) => {
 };
 
 const AboutPage = () => {
-  // Framer Motion variants for stagger effect
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    show: { 
-      opacity: 1, 
-      transition: {
-        staggerChildren: 0.2
-      }
-    }
-  };
-
-  const itemVariants = {
-    hidden: { opacity: 0, y: 20 },
-    show: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } }
-  };
-
   return (
     <div className="bg-black text-white min-h-screen font-sans">
       <Header />
-      {/* Hero Section */}
-      <motion.div
-        className="relative h-96 lg:h-[500px] overflow-hidden flex items-center justify-center p-4"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 1 }}
-      >
-        <Image
-          src="/couple-having-deep-conversation-at-cafe.jpg"
-          alt="SomeLive About Us Hero Image"
-          fill
-          className="object-cover opacity-50"
-          priority
-        />
-        <motion.div
-          className="absolute inset-0 bg-black bg-opacity-60 flex items-center justify-center p-4 text-white"
-          variants={containerVariants}
-          initial="hidden"
-          animate="show"
-        >
-          <motion.h1
-            className="text-4xl sm:text-5xl lg:text-6xl font-bold text-center drop-shadow-md leading-tight"
-            variants={itemVariants}
-          >
-            우리들의 이야기, <span className="text-[#FF4D88]">SomeLive</span>
-          </motion.h1>
-        </motion.div>
-      </motion.div>
+      
+      {/* 기존 Hero Section을 NewHeroSection 컴포넌트로 교체합니다. */}
+      <NewHeroSection />
 
       <main className="container mx-auto px-4 py-16">
         {/* Mission Statement / Introduction */}

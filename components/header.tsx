@@ -1,115 +1,216 @@
 "use client"
 
-import { Search, Menu, X } from "lucide-react"
-import { Button } from "@/components/ui/button"
-import Link from "next/link"
-import { useState } from "react"
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu"
+import React, { useState, useEffect } from 'react';
+import Link from 'next/link';
+import { Search, Menu, X, Zap, Heart, Sparkles } from "lucide-react";
 
 const navLinks = [
-  { href: "#", text: "데이트 코스" },
-  { href: "#", text: "심리 테스트" },
-  { href: "#", text: "고민 상담소" },
-  { href: "/trends", text: "최신 트렌드" },
-  { href: "/news", text: "뉴스" },
-]
+  { href: "#", text: "고민 상담소"},
+  { href: "/trends", text: "최신 트렌드", emoji: "🔥" },
+  { href: "/news", text: "뉴스"},
+];
 
 export function Header() {
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+  const [yellowSpread, setYellowSpread] = useState(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollTop = window.scrollY;
+      const maxScroll = 200; // 스크롤이 200px에 도달하면 완전히 변환
+      
+      if (scrollTop > 50) {
+        setIsScrolled(true);
+        const spreadPercentage = Math.min((scrollTop - 50) / (maxScroll - 50), 1);
+        setYellowSpread(spreadPercentage);
+      } else {
+        setIsScrolled(false);
+        setYellowSpread(0);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
   return (
-    <header className="sticky top-0 z-50 w-full bg-white/80 backdrop-blur-lg border-b border-gray-200">
-      <div className="container mx-auto flex h-20 items-center justify-between px-6">
-        {/* Logo with Dropdown */}
-        <DropdownMenu>
-          <DropdownMenuTrigger asChild>
-            <Link href="/" className="group cursor-pointer">
-              <h1 className="text-2xl font-extrabold text-gray-900 tracking-wider">
-                <span className="group-hover:text-[#FF6B6B] transition-colors duration-300">S</span>
-                <span className="group-hover:text-[#A3E4D7] transition-colors duration-300">O</span>
-                <span className="group-hover:text-[#FF6B6B] transition-colors duration-300">M</span>
-                <span className="group-hover:text-[#A3E4D7] transition-colors duration-300">E</span>
-                <span className="text-gray-900">.</span>
-              </h1>
-            </Link>
-          </DropdownMenuTrigger>
-          <DropdownMenuContent className="w-40 bg-white border-gray-200 text-gray-900">
-            <DropdownMenuItem asChild>
-              <Link href="/about" className="block px-4 py-2 text-sm hover:bg-gray-100 cursor-pointer">
-                About Us
-              </Link>
-            </DropdownMenuItem>
-          </DropdownMenuContent>
-        </DropdownMenu>
+    <header className="sticky top-0 z-50 w-full transition-all duration-500 ease-out">
+      {/* Yellow spreading background */}
+      <div 
+        className="absolute inset-0 bg-gradient-to-br from-yellow-300 via-yellow-400 to-lime-300 transition-all duration-700 ease-out"
+        style={{
+          clipPath: `circle(${yellowSpread * 150}% at 50% 0%)`,
+          opacity: yellowSpread > 0 ? 1 : 0
+        }}
+      />
+      
+      {/* Original background */}
+      <div className={`absolute inset-0 transition-all duration-500 ${
+        isScrolled 
+          ? 'bg-white/10 backdrop-blur-xl border-b border-white/20' 
+          : 'bg-white/90 backdrop-blur-lg border-b border-gray-200/50'
+      }`} />
+
+      <div className="container mx-auto flex h-20 items-center justify-between px-6 relative z-10">
+        {/* Logo */}
+        <Link href="/" className="group cursor-pointer flex items-center gap-2">
+          <div className="relative">
+            <h1 className={`text-3xl font-black tracking-wider transition-all duration-500 ${
+              isScrolled 
+                ? 'text-gray-900 drop-shadow-sm' 
+                : 'text-gray-900'
+            }`}>
+              <span className="group-hover:text-pink-500 transition-colors duration-300 inline-block group-hover:animate-bounce">S</span>
+              <span className="group-hover:text-pink-500 transition-colors duration-300 inline-block group-hover:animate-bounce" style={{animationDelay: '0.1s'}}>O</span>
+              <span className="transition-colors duration-300 inline-block">M</span>
+              <span className="transition-colors duration-300 inline-block">E</span>
+              <span className={`${isScrolled ? 'text-gray-900' : 'text-gray-900'}`}>.</span>
+            </h1>
+            {isScrolled && (
+              <div className="absolute -top-1 -right-1">
+                <Sparkles className="w-4 h-4 text-pink-500 animate-pulse" />
+              </div>
+            )}
+          </div>
+          
+          {isScrolled && (
+            <div className="ml-2 px-3 py-1 bg-black/80 text-white text-xs font-bold rounded-full animate-pulse">
+              TRENDY
+            </div>
+          )}
+        </Link>
 
         {/* Desktop Navigation */}
-        <nav className="hidden md:flex items-center space-x-8">
+        <nav className="hidden md:flex items-center space-x-1">
           {navLinks.map((link, index) => (
-            <Link 
-              key={index} 
-              href={link.href} 
-              className="relative text-sm font-medium text-gray-600 hover:text-gray-900 transition-colors duration-300 group"
+            <Link
+              key={index}
+              href={link.href}
+              className={`group relative px-4 py-2 text-sm font-bold transition-all duration-300 rounded-full hover:scale-105 ${
+                isScrolled
+                  ? 'text-gray-900 hover:bg-black/10 hover:text-black'
+                  : 'text-gray-700 hover:bg-gray-100 hover:text-gray-900'
+              }`}
             >
-              {link.text}
-              <span 
-                className={`absolute -bottom-2 left-1/2 -translate-x-1/2 w-0 h-0.5 bg-gradient-to-r ${index % 2 === 0 ? 'from-[#FF6B6B] to-[#A3E4D7]' : 'from-[#A3E4D7] to-[#FF6B6B]'} transition-all duration-300 group-hover:w-full`}
-              />
+              <span className="flex items-center gap-2">
+                <span className="group-hover:animate-bounce">{link.emoji}</span>
+                {link.text}
+              </span>
+              
+              {/* Hover effect */}
+              <div className="absolute inset-0 rounded-full bg-gradient-to-r from-pink-400 via-purple-400 to-blue-400 opacity-0 group-hover:opacity-20 transition-all duration-300 blur-sm"></div>
+              
+              {/* Bottom line */}
+              <div className={`absolute -bottom-1 left-1/2 -translate-x-1/2 w-0 h-1 rounded-full transition-all duration-300 group-hover:w-8 ${
+                isScrolled 
+                  ? 'bg-gradient-to-r from-pink-500 to-purple-500' 
+                  : 'bg-gradient-to-r from-pink-400 to-blue-400'
+              }`} />
             </Link>
           ))}
         </nav>
 
         {/* Right side */}
-        <div className="flex items-center space-x-4">
-          <Button variant="ghost" size="icon" className="text-gray-600 hover:text-gray-900 hover:bg-gray-100 rounded-full">
-            <Search className="h-5 w-5" />
-          </Button>
-          <Button 
-            variant="outline"
-            className="hidden sm:flex bg-transparent border-2 border-gray-400 text-gray-700 rounded-full font-bold text-sm px-6 hover:bg-gray-100 hover:text-gray-900 transition-all duration-300 group"
-          >
-            로그인
-            <span className="ml-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 animate-pulse">✨</span>
-          </Button>
+        <div className="flex items-center space-x-3">
+          {/* Search with cool effect */}
+          <div className="relative group">
+            <button className={`p-3 rounded-full transition-all duration-300 ${
+              isScrolled
+                ? 'text-gray-900 hover:bg-black/10 hover:scale-110'
+                : 'text-gray-600 hover:bg-gray-100 hover:scale-110'
+            }`}>
+              <Search className="h-5 w-5" />
+            </button>
+            {isScrolled && (
+              <div className="absolute -inset-1 bg-gradient-to-r from-pink-500 to-purple-500 rounded-full opacity-20 blur animate-pulse"></div>
+            )}
+          </div>
+
+          {/* Login button */}
+          <button className={`hidden sm:flex items-center gap-2 px-6 py-2 rounded-full font-bold text-sm transition-all duration-300 hover:scale-105 group ${
+            isScrolled
+              ? 'bg-gradient-to-r from-pink-500 to-purple-600 text-white shadow-lg hover:shadow-xl'
+              : 'bg-transparent border-2 border-gray-400 text-gray-700 hover:bg-gray-100 hover:text-gray-900'
+          }`}>
+            <span>로그인</span>
+            {isScrolled ? (
+              <Zap className="w-4 h-4 group-hover:animate-bounce" />
+            ) : (
+              <Heart className="w-4 h-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+            )}
+          </button>
           
           {/* Mobile Menu Button */}
-          <Button
-            variant="ghost"
-            size="icon"
-            className="md:hidden text-gray-600 hover:text-gray-900 hover:bg-gray-100 rounded-full"
+          <button
+            className={`md:hidden p-3 rounded-full transition-all duration-300 hover:scale-110 ${
+              isScrolled
+                ? 'text-gray-900 hover:bg-black/10'
+                : 'text-gray-600 hover:bg-gray-100'
+            }`}
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           >
             {isMobileMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
-          </Button>
+          </button>
         </div>
       </div>
 
       {/* Mobile Menu */}
       {isMobileMenuOpen && (
-        <div className="md:hidden bg-white/90 backdrop-blur-xl border-t border-gray-200">
-          <div className="container mx-auto px-6 py-8 space-y-6">
+        <div className={`md:hidden transition-all duration-500 ${
+          isScrolled 
+            ? 'bg-yellow-300/95 backdrop-blur-xl border-t border-yellow-400/30' 
+            : 'bg-white/95 backdrop-blur-xl border-t border-gray-200'
+        }`}>
+          <div className="container mx-auto px-6 py-6 space-y-4">
             {navLinks.map((link, index) => (
-              <Link 
-                key={index} 
-                href={link.href} 
-                className="block text-lg font-semibold text-center text-gray-700 hover:text-gray-900 hover:scale-105 transition-all duration-300 py-2"
+              <Link
+                key={index}
+                href={link.href}
+                className={`flex items-center justify-center gap-3 text-lg font-bold py-3 rounded-full transition-all duration-300 hover:scale-105 ${
+                  isScrolled
+                    ? 'text-gray-900 hover:bg-black/10'
+                    : 'text-gray-700 hover:bg-gray-100'
+                }`}
                 onClick={() => setIsMobileMenuOpen(false)}
               >
+                <span className="text-xl animate-bounce">{link.emoji}</span>
                 {link.text}
               </Link>
             ))}
-            <div className="pt-6 border-t border-gray-200">
-              <Button className="w-full bg-[#FF6B6B] text-white font-bold rounded-full hover:bg-[#E05A5A]">
-                로그인
-              </Button>
+            
+            <div className="pt-4 border-t border-current/20">
+              <button className={`w-full py-3 font-bold rounded-full transition-all duration-300 hover:scale-105 ${
+                isScrolled
+                  ? 'bg-gradient-to-r from-pink-500 to-purple-600 text-white shadow-lg'
+                  : 'bg-gradient-to-r from-pink-400 to-purple-500 text-white'
+              }`}>
+                로그인하고 시작하기 ✨
+              </button>
             </div>
           </div>
         </div>
       )}
+
+      {/* Floating particles effect when scrolled */}
+      {isScrolled && (
+        <div className="absolute inset-0 pointer-events-none overflow-hidden">
+          {[...Array(5)].map((_, i) => (
+            <div
+              key={i}
+              className="absolute w-2 h-2 bg-white/30 rounded-full animate-bounce"
+              style={{
+                left: `${20 + i * 15}%`,
+                top: `${20 + (i % 2) * 60}%`,
+                animationDelay: `${i * 0.5}s`,
+                animationDuration: '2s'
+              }}
+            />
+          ))}
+        </div>
+      )}
     </header>
-  )
+  );
 }
