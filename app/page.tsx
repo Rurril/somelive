@@ -1,10 +1,8 @@
-
 import { Header } from "@/components/header"
 import { CategorySection } from "@/components/category-section"
 import { CultureTrend } from "@/components/culture-trend"
 import { LatestPosts } from "@/components/latest-posts"
 import { NewestSection } from "@/components/newest-section"
-import { NewsletterSection } from "@/components/newsletter-section"
 import { Footer } from "@/components/footer"
 import { collection, getDocs, limit, orderBy, query, where } from "firebase/firestore"
 import { db } from "@/lib/firebase"
@@ -64,7 +62,6 @@ export default async function Home() {
       <NewestSection latestPost={magazinePost} />
       <CultureTrend posts={cultureTrends} />
       <CategorySection />
-      <NewsletterSection />
       <Footer />
     </main>
   )

@@ -1,4 +1,3 @@
-
 "use client"
 
 import { useEffect, useState } from "react"
@@ -15,7 +14,7 @@ const slugify = (text) => {
     .replace(/-+$/, '');
 };
 
-export function CultureTrend({ posts }) { // 컴포넌트 이름을 다시 CultureTrend로 수정했습니다.
+export function CultureTrend({ posts }) {
   const [currentSlide, setCurrentSlide] = useState(0)
   const [isAutoPlaying, setIsAutoPlaying] = useState(true)
   const [visiblePosts, setVisiblePosts] = useState(3)
@@ -57,7 +56,7 @@ export function CultureTrend({ posts }) { // 컴포넌트 이름을 다시 Cultu
   }
 
   return (
-    <section className="w-full py-16 md:py-24 lg:py-32 relative overflow-hidden">
+    <section className="w-full py-12 md:py-16 relative overflow-hidden">
       {/* Dynamic gradient background */}
       <div className="absolute inset-0 bg-gradient-to-br from-violet-50 via-pink-50 to-orange-50" />
       

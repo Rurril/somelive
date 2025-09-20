@@ -1,3 +1,4 @@
+
 "use client";
 import React, { useState } from "react";
 import Link from 'next/link';
@@ -19,7 +20,7 @@ export function LatestPosts({ posts }) {
 
   if (!posts || posts.length === 0) {
     return (
-      <section className="w-full py-16 md:py-24 lg:py-32 bg-gradient-to-br from-purple-50 via-pink-50 to-yellow-50">
+      <section className="w-full py-12 md:py-16 bg-gradient-to-br from-purple-50 via-pink-50 to-yellow-50">
         <div className="container px-4 md:px-6 max-w-6xl mx-auto text-center">
           <div className="bg-white/60 backdrop-blur-sm rounded-2xl p-8 border border-white/20">
             <p className="text-gray-600 text-lg">아직 멋진 콘텐츠를 준비중이에요! 🚀</p>
@@ -40,7 +41,7 @@ export function LatestPosts({ posts }) {
   const currentPost = posts[currentSlide];
 
   return (
-    <section className="w-full py-16 md:py-24 lg:py-32 relative overflow-hidden">
+    <section className="w-full py-12 md:py-16 relative overflow-hidden">
       {/* Dynamic Background */}
       <div className="absolute inset-0 bg-gradient-to-br from-indigo-50 via-purple-50 to-pink-50 transition-all duration-1000" />
       <div className="absolute inset-0 opacity-30">
@@ -55,9 +56,11 @@ export function LatestPosts({ posts }) {
           <div className="inline-flex items-center gap-2 bg-white/80 backdrop-blur-sm px-4 py-2 rounded-full border border-white/30 mb-4">
             <Sparkles className="w-4 h-4 text-purple-500 animate-spin" />
             <span className="text-sm font-bold text-gray-700">LATEST DROPS</span>
-            <Zap className="w-4 h-4 text-yellow-500" />        
+            <Zap className="w-4 h-4 text-yellow-500" />
           </div>
-          
+          <h2 className="text-4xl md:text-5xl font-black bg-gradient-to-r from-purple-600 via-pink-600 to-orange-500 bg-clip-text text-transparent">
+            지금 핫한 이야기 🔥
+          </h2>
         </div>
 
         {/* Main Slider */}
