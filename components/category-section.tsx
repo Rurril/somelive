@@ -47,7 +47,7 @@ const categories = [
 
 export function CategorySection() {
   return (
-    <section className="py-12 md:py-16 px-6 bg-gradient-to-br from-stone-50 via-white to-lime-50/30 relative overflow-hidden">
+    <section className="py-12 md:py-16 px-6 bg-white relative overflow-hidden">
       {/* Background Decorations */}
       <div className="absolute inset-0">
         <div className="absolute top-20 -left-20 w-40 h-40 bg-gradient-to-r from-green-200/30 to-teal-200/30 rounded-full blur-3xl animate-pulse" />

@@ -132,7 +132,7 @@ export function Header() {
           {/* Login button */}
           <button className={`hidden sm:flex items-center gap-2 px-6 py-2 rounded-full font-bold text-sm transition-all duration-300 hover:scale-105 group ${
             isScrolled
-              ? 'bg-gradient-to-r from-pink-500 to-purple-600 text-white shadow-lg hover:shadow-xl'
+              ? 'bg-orange-500 text-white shadow-lg hover:bg-orange-600'
               : 'bg-transparent border-2 border-gray-400 text-gray-700 hover:bg-gray-100 hover:text-gray-900'
           }`}>
             <span>로그인</span>
@@ -184,8 +184,8 @@ export function Header() {
             <div className="pt-4 border-t border-current/20">
               <button className={`w-full py-3 font-bold rounded-full transition-all duration-300 hover:scale-105 ${
                 isScrolled
-                  ? 'bg-gradient-to-r from-pink-500 to-purple-600 text-white shadow-lg'
-                  : 'bg-gradient-to-r from-pink-400 to-purple-500 text-white'
+                  ? 'bg-orange-500 text-white shadow-lg'
+                  : 'bg-orange-500 text-white'
               }`}>
                 로그인하고 시작하기 ✨
               </button>

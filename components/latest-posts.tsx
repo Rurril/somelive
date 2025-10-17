@@ -20,7 +20,7 @@ export function LatestPosts({ posts }) {
 
   if (!posts || posts.length === 0) {
     return (
-      <section className="w-full py-12 md:py-16 bg-gradient-to-br from-purple-50 via-pink-50 to-yellow-50">
+      <section className="w-full py-12 md:py-16 bg-white">
         <div className="container px-4 md:px-6 max-w-6xl mx-auto text-center">
           <div className="bg-white/60 backdrop-blur-sm rounded-2xl p-8 border border-white/20">
             <p className="text-gray-600 text-lg">아직 멋진 콘텐츠를 준비중이에요! 🚀</p>
@@ -43,7 +43,7 @@ export function LatestPosts({ posts }) {
   return (
     <section className="w-full py-12 md:py-16 relative overflow-hidden">
       {/* Dynamic Background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-indigo-50 via-purple-50 to-pink-50 transition-all duration-1000" />
+      <div className="absolute inset-0 bg-white transition-all duration-1000" />
       <div className="absolute inset-0 opacity-30">
         <div className="absolute top-10 left-10 w-32 h-32 bg-gradient-to-r from-pink-300 to-purple-400 rounded-full blur-3xl animate-pulse" />
         <div className="absolute bottom-20 right-20 w-24 h-24 bg-gradient-to-r from-yellow-300 to-orange-400 rounded-full blur-2xl animate-pulse" style={{ animationDelay: '1s' }} />
@@ -52,13 +52,12 @@ export function LatestPosts({ posts }) {
 
       <div className="container px-4 md:px-6 max-w-6xl mx-auto relative z-10">
         {/* Section Header */}
-        <div className="text-center mb-12">
-          <div className="inline-flex items-center gap-2 bg-white/80 backdrop-blur-sm px-4 py-2 rounded-full border border-white/30 mb-4">
+        <div className="text-center">
+          <div className="inline-flex items-center gap-2 bg-white/80 backdrop-blur-sm px-4 py-2 rounded-full border border-white/30">
             <Sparkles className="w-4 h-4 text-purple-500 animate-spin" />
             <span className="text-sm font-bold text-gray-700">LATEST DROPS</span>
             <Zap className="w-4 h-4 text-yellow-500" />
-          </div>
-          
+          </div>        
         </div>
 
         {/* Main Slider */}
@@ -151,7 +150,7 @@ export function LatestPosts({ posts }) {
           </div>
 
           {/* Navigation Controls */}
-          <div className="absolute bottom-0 right-0 flex items-center gap-4 p-6 z-20">
+          <div className="absolute bottom-0 right-0 flex items-center gap-4 z-20">
             <button 
               onClick={prevSlide}
               className="group p-3 rounded-full bg-white/80 backdrop-blur-sm text-gray-800 hover:bg-white shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110 border border-white/30"
@@ -175,7 +174,7 @@ export function LatestPosts({ posts }) {
           </div>
 
           {/* Slide Indicators */}
-          <div className="flex justify-center mt-8 gap-2">
+          <div className="flex justify-center mt-4 gap-2">
             {posts.map((_, index) => (
               <button
                 key={index}
@@ -191,7 +190,7 @@ export function LatestPosts({ posts }) {
         </div>
 
         {/* Bottom decorative text */}
-        <div className="text-center mt-12">
+        <div className="text-center mt-8">
           <p className="text-gray-500 text-sm font-medium">
             매주 업데이트되는 핫한 콘텐츠 ✨ 놓치지 마세요!
           </p>

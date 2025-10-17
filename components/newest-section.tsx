@@ -30,7 +30,7 @@ export const NewestSection = ({ latestPost }) => {
   return (
     <section className="w-full py-12 md:py-16 relative overflow-hidden">
       {/* Background with subtle gradient */}
-      <div className="absolute inset-0 bg-gradient-to-br from-orange-50 via-pink-50 to-purple-50" />
+      <div className="absolute inset-0 bg-white" />
       
       {/* Floating background elements */}
       <div className="absolute inset-0 opacity-40">
@@ -48,7 +48,7 @@ export const NewestSection = ({ latestPost }) => {
             <span className="text-sm font-bold text-gray-700 uppercase tracking-wide">Featured</span>
             <Heart className="w-4 h-4 text-pink-500" />
           </div>
-          <h2 className="text-3xl md:text-4xl font-black bg-gradient-to-r from-orange-600 via-pink-600 to-purple-600 bg-clip-text text-transparent mb-4">
+          <h2 className="text-3xl md:text-2xl font-black bg-gradient-to-r from-orange-600 via-pink-600 to-purple-600 bg-clip-text text-transparent mb-4">
             트렌드를 찾아볼 때는?
           </h2>        
         </div>
@@ -96,7 +96,7 @@ export const NewestSection = ({ latestPost }) => {
                 <div className="relative overflow-hidden bg-white/90 backdrop-blur-sm h-full flex flex-col shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 border border-white/20">
                   
                   {/* Glow effect on hover */}
-                  <div className="absolute -inset-0.5 bg-gradient-to-r from-orange-500 via-pink-500 to-purple-500 opacity-0 group-hover:opacity-20 blur transition-all duration-500"></div>
+                  <div className="absolute -inset-0.5 bg-gradient-to-r from-orange-500 via-pink-500 to-purple-500 opacity-0 blur transition-all duration-500"></div>
                   
                   <div className="relative aspect-[16/10] w-full overflow-hidden">
                     <img
@@ -104,7 +104,7 @@ export const NewestSection = ({ latestPost }) => {
                       alt={latestPost.title}
                       className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent group-hover:from-black/60 transition-all duration-300"></div>
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent transition-all duration-300"></div>
                     
                     {/* Enhanced badges */}
                     <div className="absolute top-4 left-4">
@@ -181,7 +181,7 @@ export const NewestSection = ({ latestPost }) => {
               <div className="relative overflow-hidden bg-gradient-to-br from-gray-900 to-gray-800 h-full min-h-[300px] text-white shadow-lg hover:shadow-2xl transition-all duration-500 hover:scale-105 border border-gray-700">
                 
                 {/* Subtle glow effect */}
-                <div className="absolute -inset-0.5 bg-gradient-to-r from-purple-500/20 to-pink-500/20 opacity-0 group-hover:opacity-100 blur transition-all duration-500"></div>
+                <div className="absolute -inset-0.5 bg-gradient-to-r from-purple-500/20 to-pink-500/20 opacity-0 blur transition-all duration-500"></div>
                 
                 <div className="absolute inset-0 bg-gradient-to-br from-purple-900/30 to-pink-900/30"></div>
                 <div className="absolute inset-0 opacity-20">
@@ -233,7 +233,7 @@ export const NewestSection = ({ latestPost }) => {
 
         {/* 하단 네비게이션 */}
         <div className="mt-12 text-center">
-          <button className="group inline-flex items-center gap-3 bg-gradient-to-r from-orange-500 to-pink-500 text-white px-8 py-3 rounded-full font-bold hover:from-orange-600 hover:to-pink-600 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105">
+          <button className="group inline-flex items-center gap-3 bg-orange-500 text-white px-8 py-3 rounded-full font-bold hover:bg-orange-600 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105">
             <span>모든 매거진 보기</span>
             <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
           </button>

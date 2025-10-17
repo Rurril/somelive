@@ -58,7 +58,7 @@ export function CultureTrend({ posts }) {
   return (
     <section className="w-full py-12 md:py-16 relative overflow-hidden">
       {/* Dynamic gradient background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-violet-50 via-pink-50 to-orange-50" />
+      <div className="absolute inset-0 bg-white" />
       
       {/* Floating background elements */}
       <div className="absolute inset-0 opacity-40">
@@ -78,14 +78,14 @@ export function CultureTrend({ posts }) {
                 <Heart className="w-4 h-4 text-pink-500" />
               </div>
             </div>
-            <h2 className="text-3xl md:text-4xl font-black bg-gradient-to-r from-violet-600 via-pink-600 to-orange-500 bg-clip-text text-transparent">
+            <h2 className="text-3xl md:text-2xl font-black bg-gradient-to-r from-violet-600 via-pink-600 to-orange-500 bg-clip-text text-transparent">
               요즘에는 💜
             </h2>            
           </div>
           
           <Link 
             href={{ pathname: '/trends', query: { category: '데이트 문화' } }} 
-            className="group mt-6 md:mt-0 flex items-center gap-2 bg-gradient-to-r from-violet-500 to-pink-500 text-white px-6 py-3 rounded-full font-bold hover:from-violet-600 hover:to-pink-600 transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-xl"
+            className="group mt-6 md:mt-0 flex items-center gap-2 bg-orange-500 text-white px-6 py-3 rounded-full font-bold hover:bg-orange-600 transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-xl"
           >
             <span>더보기</span>
             <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
@@ -122,12 +122,12 @@ export function CultureTrend({ posts }) {
                           />
                           
                           {/* Gradient overlay */}
-                          <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                          <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent opacity-0 transition-opacity duration-300" />
                           
-                          {/* Trending badge */}
+                          {/* Trending badge
                           <div className="absolute top-4 right-4 bg-gradient-to-r from-pink-500 to-violet-500 text-white px-3 py-1 rounded-full text-xs font-bold shadow-lg">
                             TRENDING 🔥
-                          </div>
+                          </div> */}
                           
                           {/* Category badge */}
                           <div className="absolute top-4 left-4 bg-white/90 backdrop-blur-sm text-gray-800 px-3 py-1 rounded-full text-xs font-bold border border-white/30">
@@ -150,7 +150,7 @@ export function CultureTrend({ posts }) {
                           </div>
                           
                           {/* Title */}
-                          <h3 className="text-lg font-bold text-gray-900 leading-tight flex-grow line-clamp-2 group-hover:text-violet-600 transition-colors duration-300">
+                          <h3 className="text-lg font-bold text-gray-900 leading-tight flex-grow line-clamp-2 group-hover:text-orange-600 transition-colors duration-300">
                             {post.title}
                           </h3>
                           
