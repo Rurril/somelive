@@ -79,9 +79,8 @@ export function CultureTrend({ posts }) {
               </div>
             </div>
             <h2 className="text-3xl md:text-4xl font-black bg-gradient-to-r from-violet-600 via-pink-600 to-orange-500 bg-clip-text text-transparent">
-              Culture Trend 💜
-            </h2>
-            <p className="text-lg text-gray-600 font-medium">요즘 연인들은 어떤 데이트를 즐길까요?</p>
+              요즘에는 💜
+            </h2>            
           </div>
           
           <Link 
@@ -100,7 +99,7 @@ export function CultureTrend({ posts }) {
             onMouseLeave={() => setIsAutoPlaying(true)}
           >
             {/* Slider Container */}
-            <div className="overflow-hidden rounded-2xl">
+            <div className="overflow-hidden">
               <div 
                 className="flex transition-transform duration-700 ease-out"
                 style={{ transform: `translateX(-${currentSlide * (100 / visiblePosts)}%)` }}
@@ -112,7 +111,7 @@ export function CultureTrend({ posts }) {
                     style={{ width: `${100 / visiblePosts}%` }}
                   >
                     <Link href={`/posts/${slugify(post.title)}`} className="group block h-full">
-                      <div className="relative overflow-hidden rounded-2xl bg-white/90 backdrop-blur-sm h-full flex flex-col shadow-lg hover:shadow-2xl transition-all duration-500 hover:scale-105 border border-white/20">
+                      <div className="relative overflow-hidden bg-white/90 backdrop-blur-sm h-full flex flex-col shadow-lg hover:shadow-2xl transition-all duration-500 hover:scale-105 border border-white/20">
                         
                         {/* Image Section */}
                         <div className="relative aspect-[4/3] w-full overflow-hidden">
@@ -200,7 +199,7 @@ export function CultureTrend({ posts }) {
           </div>
         ) : (
           <div className="text-center py-20">
-            <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-12 border border-white/30 shadow-lg max-w-md mx-auto">
+            <div className="bg-white/80 backdrop-blur-sm p-12 border border-white/30 shadow-lg max-w-md mx-auto">
               <div className="w-16 h-16 bg-gradient-to-r from-pink-400 to-violet-500 rounded-full flex items-center justify-center mx-auto mb-4">
                 <Zap className="w-8 h-8 text-white" />
               </div>

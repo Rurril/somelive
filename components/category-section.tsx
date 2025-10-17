@@ -93,25 +93,25 @@ export function CategorySection() {
                 <Link href={category.href} className="block">
                   <div className="relative h-full animate-float" style={{ animationDelay: `${index * 1}s` }}>
                     {/* Glow Effect */}
-                    <div className={`absolute -inset-1 bg-gradient-to-r ${category.gradient} rounded-3xl blur opacity-0 group-hover:opacity-40 transition-all duration-500`} />
+                    <div className={`absolute -inset-1 bg-gradient-to-r ${category.gradient} blur opacity-0 group-hover:opacity-40 transition-all duration-500`} />
                     
                     {/* Main Card */}
-                    <Card className={`relative bg-white/70 backdrop-blur-sm border-0 rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-500 h-full overflow-hidden transform hover:-translate-y-2 hover:scale-105`}>
+                    <Card className={`relative bg-white/70 backdrop-blur-sm border-0 shadow-lg hover:shadow-2xl transition-all duration-500 h-full overflow-hidden transform hover:-translate-y-2 hover:scale-105`}>
                       {/* Gradient Border */}
-                      <div className={`absolute inset-0 bg-gradient-to-r ${category.borderGradient} rounded-3xl p-px`}>
-                        <div className="bg-white rounded-3xl w-full h-full" />
+                      <div className={`absolute inset-0 bg-gradient-to-r ${category.borderGradient} p-px`}>
+                        <div className="bg-white w-full h-full" />
                       </div>
                       
                       {/* Background Pattern */}
-                      <div className={`absolute inset-0 bg-gradient-to-br ${category.bgGradient} opacity-30 rounded-3xl`} />
+                      <div className={`absolute inset-0 bg-gradient-to-br ${category.bgGradient} opacity-30`} />
                       
                       <CardContent className="relative p-8 text-center h-full flex flex-col">
                         {/* Icon Container */}
                         <div className="mb-6 flex justify-center">
                           <div className="relative group/icon">
                             {/* Icon Background */}
-                            <div className={`w-16 h-16 bg-gradient-to-r ${category.gradient} rounded-2xl p-0.5 shadow-lg transform group-hover:rotate-3 group-hover:scale-110 transition-all duration-300`}>
-                              <div className="w-full h-full bg-white rounded-2xl flex items-center justify-center">
+                            <div className={`w-16 h-16 bg-gradient-to-r ${category.gradient} p-0.5 shadow-lg transform group-hover:rotate-3 group-hover:scale-110 transition-all duration-300`}>
+                              <div className="w-full h-full bg-white flex items-center justify-center">
                                 <Icon className="h-7 w-7 text-gray-700" />
                               </div>
                             </div>

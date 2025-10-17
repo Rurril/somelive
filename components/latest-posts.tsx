@@ -58,9 +58,7 @@ export function LatestPosts({ posts }) {
             <span className="text-sm font-bold text-gray-700">LATEST DROPS</span>
             <Zap className="w-4 h-4 text-yellow-500" />
           </div>
-          <h2 className="text-4xl md:text-5xl font-black bg-gradient-to-r from-purple-600 via-pink-600 to-orange-500 bg-clip-text text-transparent">
-            지금 핫한 이야기 🔥
-          </h2>
+          
         </div>
 
         {/* Main Slider */}
@@ -74,13 +72,13 @@ export function LatestPosts({ posts }) {
             {/* Summary (왼쪽) */}
             <div className="text-center lg:text-right space-y-4 transform transition-all duration-500 hover:scale-105">
               <div className="relative">
-                <div className="absolute -inset-4 bg-gradient-to-r from-pink-400 to-purple-500 rounded-lg blur opacity-20 group-hover:opacity-40 transition-opacity"></div>
-                <div className="relative bg-white/90 backdrop-blur-sm p-6 rounded-2xl border border-white/30 shadow-lg">
+                <div className="absolute -inset-4 bg-gradient-to-r from-pink-400 to-purple-500 blur opacity-20 group-hover:opacity-40 transition-opacity"></div>
+                <div className="relative bg-white/90 backdrop-blur-sm p-6 border border-white/30 shadow-lg">
                   <div className="flex items-center justify-center lg:justify-end gap-2 mb-3">
                     <div className="w-2 h-2 bg-pink-400 rounded-full animate-pulse"></div>
                     <span className="text-xs font-bold text-gray-500 uppercase tracking-wider">Preview</span>
                   </div>
-                  <blockquote className="text-2xl md:text-3xl font-black leading-tight text-gray-800 italic">
+                  <blockquote className="text-xl md:text-xl font-bold leading-tight text-gray-800">
                     "{currentPost.description.substring(0, 50)}..."
                   </blockquote>
                   <div className="flex items-center justify-center lg:justify-end mt-4 gap-2">
@@ -95,9 +93,9 @@ export function LatestPosts({ posts }) {
             <div className="flex justify-center">
               <div className="relative group">
                 {/* Glowing border effect */}
-                <div className="absolute -inset-1 bg-gradient-to-r from-pink-500 via-purple-500 to-cyan-500 rounded-2xl blur opacity-25 group-hover:opacity-50 transition-all duration-500 animate-pulse"></div>
+                <div className="absolute -inset-1 bg-gradient-to-r from-pink-500 via-purple-500 to-cyan-500 blur opacity-25 group-hover:opacity-50 transition-all duration-500 animate-pulse"></div>
                 
-                <div className="relative w-[400px] h-[300px] rounded-2xl overflow-hidden shadow-2xl transform transition-all duration-500 group-hover:scale-105 group-hover:rotate-1">
+                <div className="relative w-[400px] h-[300px] overflow-hidden shadow-2xl transform transition-all duration-500 group-hover:scale-105 group-hover:rotate-1">
                   <img
                     src={currentPost.image || "/placeholder.svg"}
                     alt={currentPost.title}
@@ -114,7 +112,7 @@ export function LatestPosts({ posts }) {
                   
                   {/* Bottom info on hover */}
                   <div className="absolute bottom-4 left-4 right-4 transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
-                    <div className="bg-black/60 backdrop-blur-sm text-white p-3 rounded-lg">
+                    <div className="bg-black/60 backdrop-blur-sm text-white p-3">
                       <p className="text-sm font-medium">{currentPost.category}</p>
                     </div>
                   </div>
@@ -125,8 +123,8 @@ export function LatestPosts({ posts }) {
             {/* Title & CTA (오른쪽) */}
             <div className="text-center lg:text-left space-y-6 transform transition-all duration-500 hover:scale-105">
               <div className="relative">
-                <div className="absolute -inset-4 bg-gradient-to-r from-cyan-400 to-blue-500 rounded-lg blur opacity-20 transition-opacity"></div>
-                <div className="relative bg-white/90 backdrop-blur-sm p-6 rounded-2xl border border-white/30 shadow-lg">
+                <div className="absolute -inset-4 bg-gradient-to-r from-cyan-400 to-blue-500 blur opacity-20 transition-opacity"></div>
+                <div className="relative bg-white/90 backdrop-blur-sm p-6 border border-white/30 shadow-lg">
                   <div className="flex items-center gap-2 mb-3">
                     <div className="flex gap-1">
                       <div className="w-1.5 h-1.5 bg-pink-400 rounded-full animate-bounce"></div>
@@ -136,7 +134,7 @@ export function LatestPosts({ posts }) {
                     <span className="text-xs font-bold text-gray-500 uppercase tracking-wider">Featured</span>
                   </div>
                   
-                  <h3 className="text-2xl md:text-3xl font-black mb-4 text-gray-900 leading-tight line-clamp-3">
+                  <h3 className="text-xl md:text-2xl font-black mb-4 text-gray-900 leading-tight line-clamp-3">
                     {currentPost.title}
                   </h3>
                   
@@ -195,7 +193,7 @@ export function LatestPosts({ posts }) {
         {/* Bottom decorative text */}
         <div className="text-center mt-12">
           <p className="text-gray-500 text-sm font-medium">
-            매일 업데이트되는 핫한 콘텐츠 ✨ 놓치지 마세요!
+            매주 업데이트되는 핫한 콘텐츠 ✨ 놓치지 마세요!
           </p>
         </div>
       </div>

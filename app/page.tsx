@@ -61,7 +61,8 @@ export default async function Home() {
       <LatestPosts posts={latestPosts} />
       <NewestSection latestPost={magazinePost} />
       <CultureTrend posts={cultureTrends} />
-      <CategorySection />
+      {/* <CategorySection /> */}
+      {/* 카테고리 섹션은 좀 디벨롭해서 다시 추가하자. 현재에 디자인에 잘 맞지도 않음... */}
       <Footer />
     </main>
   )

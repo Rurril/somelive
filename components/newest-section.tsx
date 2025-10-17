@@ -49,16 +49,15 @@ export const NewestSection = ({ latestPost }) => {
             <Heart className="w-4 h-4 text-pink-500" />
           </div>
           <h2 className="text-3xl md:text-4xl font-black bg-gradient-to-r from-orange-600 via-pink-600 to-purple-600 bg-clip-text text-transparent mb-4">
-            연애 매거진
-          </h2>
-          <p className="text-lg text-gray-600 font-medium">트렌드와 문화를 읽는 새로운 시각</p>
+            트렌드를 찾아볼 때는?
+          </h2>        
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8">
           
           {/* 왼쪽: 트렌드 배송조회 박스 */}
           <div className="lg:col-span-3">
-            <div className="group relative bg-gradient-to-br from-orange-500 to-orange-600 rounded-2xl p-6 text-white h-full min-h-[300px] flex flex-col justify-center overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 hover:scale-105">
+            <div className="group relative bg-gradient-to-br from-orange-500 to-orange-600 p-6 text-white h-full min-h-[300px] flex flex-col justify-center overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 hover:scale-105">
               {/* Glassmorphism overlay */}
               <div className="absolute inset-0 bg-black/10 backdrop-blur-sm"></div>
               
@@ -94,10 +93,10 @@ export const NewestSection = ({ latestPost }) => {
           <div className="lg:col-span-6">
             {latestPost ? (
               <Link href={`/posts/${slugify(latestPost.title)}`} className="group relative h-full block">
-                <div className="relative overflow-hidden rounded-2xl bg-white/90 backdrop-blur-sm h-full flex flex-col shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 border border-white/20">
+                <div className="relative overflow-hidden bg-white/90 backdrop-blur-sm h-full flex flex-col shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 border border-white/20">
                   
                   {/* Glow effect on hover */}
-                  <div className="absolute -inset-0.5 bg-gradient-to-r from-orange-500 via-pink-500 to-purple-500 rounded-2xl opacity-0 group-hover:opacity-20 blur transition-all duration-500"></div>
+                  <div className="absolute -inset-0.5 bg-gradient-to-r from-orange-500 via-pink-500 to-purple-500 opacity-0 group-hover:opacity-20 blur transition-all duration-500"></div>
                   
                   <div className="relative aspect-[16/10] w-full overflow-hidden">
                     <img
@@ -165,7 +164,7 @@ export const NewestSection = ({ latestPost }) => {
                 </div>
               </Link>
             ) : (
-              <div className="h-full flex items-center justify-center bg-white/80 backdrop-blur-sm rounded-2xl border border-white/30">
+              <div className="h-full flex items-center justify-center bg-white/80 backdrop-blur-sm border border-white/30">
                 <div className="text-center">
                   <div className="w-16 h-16 bg-gradient-to-r from-orange-400 to-pink-500 rounded-full flex items-center justify-center mx-auto mb-4">
                     <Sparkles className="w-8 h-8 text-white animate-spin" />
@@ -179,10 +178,10 @@ export const NewestSection = ({ latestPost }) => {
           {/* 오른쪽: 예정 글 스포일러 */}
           <div className="lg:col-span-3">
             <div className="group relative h-full">
-              <div className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-gray-900 to-gray-800 h-full min-h-[300px] text-white shadow-lg hover:shadow-2xl transition-all duration-500 hover:scale-105 border border-gray-700">
+              <div className="relative overflow-hidden bg-gradient-to-br from-gray-900 to-gray-800 h-full min-h-[300px] text-white shadow-lg hover:shadow-2xl transition-all duration-500 hover:scale-105 border border-gray-700">
                 
                 {/* Subtle glow effect */}
-                <div className="absolute -inset-0.5 bg-gradient-to-r from-purple-500/20 to-pink-500/20 rounded-2xl opacity-0 group-hover:opacity-100 blur transition-all duration-500"></div>
+                <div className="absolute -inset-0.5 bg-gradient-to-r from-purple-500/20 to-pink-500/20 opacity-0 group-hover:opacity-100 blur transition-all duration-500"></div>
                 
                 <div className="absolute inset-0 bg-gradient-to-br from-purple-900/30 to-pink-900/30"></div>
                 <div className="absolute inset-0 opacity-20">
