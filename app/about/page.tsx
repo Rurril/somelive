@@ -3,10 +3,10 @@
 import React from 'react';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
-import CoreValue from '@/components/core-value';
+// import CoreValue from '@/components/core-value';
 import Link from 'next/link';
 import { Header } from '@/components/header';
-import { NewHeroSection } from '@/components/new-hero-section'; // NewHeroSection을 import 합니다.
+// import { NewHeroSection } from '@/components/new-hero-section'; // NewHeroSection을 import 합니다.
 
 // 텍스트 강조를 위한 컴포넌트 (마이크로 인터랙션)
 const HighlightedText = ({ children, color = "text-[#FF4D88]" }) => {
@@ -37,7 +37,7 @@ const AboutPage = () => {
       <Header />
       
       {/* 기존 Hero Section을 NewHeroSection 컴포넌트로 교체합니다. */}
-      <NewHeroSection />
+      {/* <NewHeroSection /> */}
 
       <main className="container mx-auto px-4 py-16">
         {/* Mission Statement / Introduction */}
@@ -75,7 +75,7 @@ const AboutPage = () => {
           >
             Somelive의 <span className="text-[#00D4C7]">핵심 가치</span>
           </motion.h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          {/* <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <CoreValue
               title="공감"
               description="완벽한 연애 말고, 솔직한 고민과 경험을 나눕니다."
@@ -91,7 +91,7 @@ const AboutPage = () => {
               description="모든 형태의 관계를 존중하고, 새로운 시각을 제안합니다."
               icon="M12 2a10 10 0 100 20 10 10 0 000-20z"
             />
-          </div>
+          </div> */}
         </section>
 
         {/* CTA Section */}

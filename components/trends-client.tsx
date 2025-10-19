@@ -7,17 +7,9 @@ import { useSearchParams } from 'next/navigation';
 import { ArrowUp, ArrowDown } from "lucide-react";
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import { slugify } from "@/lib/utils";
 
-// Helper function to generate URL-friendly slugs
-const slugify = (text) => {
-  if (!text) return '';
-  return text.toString().toLowerCase()
-    .replace(/\s+/g, '-')           // Replace spaces with -
-    .replace(/[^\w\-]+/g, '')       // Remove all non-word chars
-    .replace(/\-\-+/g, '-')         // Replace multiple - with single -
-    .replace(/^-+/, '')             // Trim - from start of text
-    .replace(/-+$/, '');            // Trim - from end of text
-};
+const formatDate = (date) => date || '';
 
 const categories = ["전체", "연애 트렌드", "심리 테스트", "연애 기술", "데이트 문화", "AI 연애", "관계 심리"];
 
@@ -57,7 +49,7 @@ const TrendCard = ({ item }) => (
     </CardContent>
     
     <CardFooter className="p-6 bg-gray-50/50 flex items-center justify-between text-sm text-gray-500">
-      <span>{item.date}</span>
+      <span>{formatDate(item.date)}</span>
       <div className="flex items-center gap-2 font-semibold">
         {item.changeType === 'up' ? (
           <ArrowUp className="w-4 h-4 text-green-500" />
@@ -80,7 +72,7 @@ const CategoryFilter = ({ categories, activeCategory, onCategoryChange }) => (
           <button
             key={category}
             onClick={() => onCategoryChange(category)}
-            className={`whitespace-nowrap py-3 px-4 text-sm font-semibold rounded-t-lg transition-colors ${
+            className={`whitespace-nowrap py-3 px-4 text-sm font-semibold transition-colors ${
               activeCategory === category
                 ? 'bg-white text-orange-600 border-b-2 border-orange-600'
                 : 'text-gray-600 hover:bg-gray-100'
@@ -123,7 +115,7 @@ export default function TrendReportClient({ trendItems }) {
         {filteredItems && filteredItems.length > 0 ? (
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {filteredItems.map((item) => (
-                <Link key={item.id || item.title} href={`/posts/${slugify(item.title)}`} className="block">
+                <Link key={item.id} href={`/posts/${slugify(item.title)}`} className="block">
                 <TrendCard item={item} />
                 </Link>
             ))}

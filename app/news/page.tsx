@@ -2,7 +2,8 @@
 
 import { useState } from "react";
 import { ExternalLink, ChevronUp, ChevronDown, Search } from "lucide-react";
-import { Header } from "@/components/header"; // Assuming this exists
+import { Header } from "@/components/header";
+import { Footer } from "@/components/footer";
 
 const newsItems = [
   {
@@ -149,6 +150,7 @@ export default function NewsPage() {
 
   return (
     <div className="min-h-screen bg-neutral-50 text-neutral-800 font-sans">
+      <Header />
       <div className="bg-orange-500 text-white py-1">
         <p className="text-xs text-center font-medium">✨ 매일 아침 업데이트되는 뉴스 큐레이션</p>
       </div>
@@ -206,6 +208,7 @@ export default function NewsPage() {
           </button>
         </div>
       </main>
+      <Footer />
     </div>
   );
 }

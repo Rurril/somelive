@@ -25,3 +25,9 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# sensitive files
+lib/serviceAccountKey.json
+
+# macos
+.DS_Store
