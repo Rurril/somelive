@@ -1,6 +1,7 @@
 import { NextResponse } from 'next/server';
 import admin from 'firebase-admin';
 import path from 'path';
+import fs from 'fs';
 
 // Read the service account key from environment variables or a local file.
 let serviceAccount;
@@ -11,11 +12,13 @@ if (process.env.FIREBASE_SERVICE_ACCOUNT_KEY_JSON) {
     throw new Error('Failed to parse FIREBASE_SERVICE_ACCOUNT_KEY_JSON. Please ensure it is a valid JSON string.');
   }
 } else {
-  // Fallback for local development, using a dynamic path to avoid build errors.
+  // Fallback for local development, using fs to read the file at runtime.
   try {
     const keyPath = path.join(process.cwd(), 'lib', 'serviceAccountKey.json');
-    serviceAccount = require(keyPath);
+    const keyFile = fs.readFileSync(keyPath, 'utf8');
+    serviceAccount = JSON.parse(keyFile);
   } catch (e) {
+    console.error("Error reading or parsing serviceAccountKey.json:", e);
     throw new Error('Firebase service account key is not found. Please set FIREBASE_SERVICE_ACCOUNT_KEY_JSON environment variable or place serviceAccountKey.json in the lib directory.');
   }
 }

@@ -7,7 +7,7 @@ import TrendReportClient from "@/components/trends-client";
 async function getTrends() {
   try {
     const trendsCollection = collection(db, "trends");
-    const q = query(trendsCollection);
+    const q = query(trendsCollection, orderBy("date", "desc"));
     const querySnapshot = await getDocs(q);
     const trends = querySnapshot.docs.map(doc => {
       const data = doc.data();

@@ -77,8 +77,8 @@ export function LatestPosts({ posts }) {
                     <div className="w-2 h-2 bg-pink-400 rounded-full animate-pulse"></div>
                     <span className="text-xs font-bold text-gray-500 uppercase tracking-wider">Preview</span>
                   </div>
-                  <blockquote className="text-xl md:text-xl font-bold leading-tight text-gray-800">
-                    "{currentPost.description.substring(0, 50)}..."
+                  <blockquote className="text-xl md:text-xl font-bold leading-tight text-gray-800 whitespace-pre-wrap">
+                    "{currentPost.previewText || currentPost.description.substring(0, 50)}..."
                   </blockquote>
                   <div className="flex items-center justify-center lg:justify-end mt-4 gap-2">
                     <Heart className="w-4 h-4 text-pink-500" />

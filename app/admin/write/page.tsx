@@ -19,6 +19,7 @@ const categories = ["연애 트렌드", "심리 테스트", "연애 기술", "�
 export default function AdminWritePage() {
   const { toast } = useToast();
   const [title, setTitle] = useState("");
+  const [previewText, setPreviewText] = useState("");
   const [description, setDescription] = useState("");
   const [category, setCategory] = useState("");
   const [imageFile, setImageFile] = useState<File | null>(null);
@@ -127,6 +128,7 @@ export default function AdminWritePage() {
         title,
         slug: slugify(title),
         description,
+        previewText,
         category,
         image: imageUrl,
         isHot,
@@ -143,6 +145,7 @@ export default function AdminWritePage() {
       });
 
       setTitle("");
+      setPreviewText("");
       setDescription("");
       setCategory("");
       setImageFile(null);
@@ -178,6 +181,11 @@ export default function AdminWritePage() {
             <div className="space-y-2">
               <Label htmlFor="title">제목</Label>
               <Input id="title" value={title} onChange={(e) => setTitle(e.target.value)} placeholder="글 제목을 입력하세요" required />
+            </div>
+
+            <div className="space-y-2">
+              <Label htmlFor="previewText">미리보기 텍스트</Label>
+              <Input id="previewText" value={previewText} onChange={(e) => setPreviewText(e.target.value)} placeholder="미리보기에 표시될 짧은 텍스트" />
             </div>
 
             <div className="space-y-2">
