@@ -15,3 +15,15 @@ export const slugify = (text: string) => {
     .replace(/^-+/, '')             // Trim - from start of text
     .replace(/-+$/, '');            // Trim - from end of text
 };
+
+// Helper function to format date from Firestore Timestamp or string
+export const formatDate = (date: any) => {
+  if (!date) return '';
+  // Handle Firestore Timestamp object
+  if (date && typeof date.seconds === 'number') {
+    const d = new Date(date.seconds * 1000);
+    return d.toISOString().split('T')[0].replace(/-/g, '.');
+  }
+  // Handle string date
+  return date;
+};

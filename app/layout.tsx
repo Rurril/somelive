@@ -1,10 +1,16 @@
 import type React from "react"
 import type { Metadata } from "next"
+import { Montserrat } from 'next/font/google';
 
 import { GeistMono } from "geist/font/mono"
 import { Suspense } from "react"
 import "./globals.css"
 import "keen-slider/keen-slider.min.css"
+
+const montserrat = Montserrat({
+  subsets: ['latin'],
+  variable: '--font-montserrat',
+});
 
 export const metadata: Metadata = {
   title: "Love Trend Magazine - 요즘 연애 트렌드",
@@ -19,7 +25,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ko">
-      <body className={`font-sans ${GeistMono.variable} antialiased`}>
+      <body className={`font-sans ${montserrat.variable} ${GeistMono.variable} antialiased`}>
         <Suspense fallback={null}>{children}</Suspense>
       </body>
     </html>

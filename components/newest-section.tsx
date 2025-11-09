@@ -48,7 +48,7 @@ export const NewestSection = ({ latestPost }) => {
             <span className="text-sm font-bold text-gray-700 uppercase tracking-wide">Featured</span>
             <Heart className="w-4 h-4 text-pink-500" />
           </div>
-          <h2 className="text-3xl md:text-2xl font-black bg-gradient-to-r from-orange-600 via-pink-600 to-purple-600 bg-clip-text text-transparent mb-4">
+          <h2 className="text-3xl md:text-2xl font-black text-black mb-4">
             트렌드를 찾아볼 때는?
           </h2>        
         </div>
@@ -57,7 +57,7 @@ export const NewestSection = ({ latestPost }) => {
           
           {/* 왼쪽: 트렌드 배송조회 박스 */}
           <div className="lg:col-span-3">
-            <div className="group relative bg-gradient-to-br from-orange-500 to-orange-600 p-6 text-white h-full min-h-[300px] flex flex-col justify-center overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 hover:scale-105">
+            <div className="group relative bg-gradient-to-br from-orange-500 to-orange-600 p-4 text-white h-full min-h-[150px] lg:min-h-[300px] flex flex-col justify-center overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 hover:scale-105">
               {/* Glassmorphism overlay */}
               <div className="absolute inset-0 bg-black/10 backdrop-blur-sm"></div>
               
@@ -66,18 +66,18 @@ export const NewestSection = ({ latestPost }) => {
               <div className="absolute bottom-6 left-6 w-1 h-1 bg-white/40 rounded-full animate-bounce"></div>
               
               <div className="relative z-10">
-                <div className="flex items-center gap-3 mb-4">
-                  <Package className="w-8 h-8 group-hover:animate-bounce" />
-                  <span className="text-lg font-bold">트렌드</span>
+                <div className="flex items-center gap-3 mb-2">
+                  <Package className="w-6 h-6 group-hover:animate-bounce" />
+                  <span className="text-base font-bold">트렌드</span>
                 </div>
-                <h3 className="text-2xl font-extrabold mb-4 leading-tight">
+                <h3 className="hidden lg:block text-xl font-extrabold mb-2 leading-tight">
                   배송 조회
                 </h3>
-                <p className="text-orange-100 mb-6 leading-relaxed">
+                <p className="text-orange-100 mb-4 text-sm leading-relaxed">
                   매일 아침 새로운 트렌드를<br />
                   배달해 드려요.
                 </p>
-                <button className="group/btn flex items-center gap-2 bg-white/20 backdrop-blur-sm px-4 py-2 rounded-full hover:bg-white/30 transition-all duration-300 hover:scale-105 border border-white/20">
+                <button className="hidden md:flex group/btn items-center gap-2 bg-white/20 backdrop-blur-sm px-4 py-2 rounded-full hover:bg-white/30 transition-all duration-300 hover:scale-105 border border-white/20">
                   <span className="font-semibold">확인하기</span>
                   <ArrowRight size={16} className="group-hover/btn:translate-x-1 transition-transform" />
                 </button>

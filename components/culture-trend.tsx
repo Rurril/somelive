@@ -78,7 +78,7 @@ export function CultureTrend({ posts }) {
                 <Heart className="w-4 h-4 text-pink-500" />
               </div>
             </div>
-            <h2 className="text-3xl md:text-2xl font-black bg-gradient-to-r from-violet-600 via-pink-600 to-orange-500 bg-clip-text text-transparent">
+            <h2 className="text-3xl md:text-2xl font-black text-black">
               요즘에는 💜
             </h2>            
           </div>
