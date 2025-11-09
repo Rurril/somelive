@@ -66,7 +66,7 @@ export function Footer() {
               </div>
               <div className="flex items-center gap-3 text-sm text-gray-600">
                 <MapPin className="w-4 h-4" />
-                <span>경기도</span>
+                <span>서울 관악구 남부순환로 1982</span>
               </div>
             </div>
 
