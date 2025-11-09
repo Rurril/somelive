@@ -1,8 +1,22 @@
 import { NextResponse } from 'next/server';
 import admin from 'firebase-admin';
 
-// Import the service account key
-import serviceAccount from '@/lib/serviceAccountKey.json';
+// Read the service account key from environment variables or a local file.
+let serviceAccount;
+if (process.env.FIREBASE_SERVICE_ACCOUNT_KEY_JSON) {
+  try {
+    serviceAccount = JSON.parse(process.env.FIREBASE_SERVICE_ACCOUNT_KEY_JSON);
+  } catch (e) {
+    throw new Error('Failed to parse FIREBASE_SERVICE_ACCOUNT_KEY_JSON. Please ensure it is a valid JSON string.');
+  }
+} else {
+  // Fallback for local development
+  try {
+    serviceAccount = require('@/lib/serviceAccountKey.json');
+  } catch (e) {
+    throw new Error('Firebase service account key is not found. Please set FIREBASE_SERVICE_ACCOUNT_KEY_JSON environment variable or place serviceAccountKey.json in the lib directory.');
+  }
+}
 
 // Cast to the correct type to satisfy TypeScript
 const typedServiceAccount = serviceAccount as admin.ServiceAccount;
