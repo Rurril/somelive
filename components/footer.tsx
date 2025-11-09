@@ -1,14 +1,9 @@
 
-"use client";
-
 import React from "react";
-import { Instagram, Facebook, Twitter, ArrowUp, Mail, Phone } from "lucide-react";
+import { Instagram, Facebook, Twitter, ArrowUp, Mail, MapPin } from "lucide-react";
+import { ScrollToTopButton } from "./scroll-to-top-button";
 
 export function Footer() {
-  const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  };
-
   return (
     <footer className="relative bg-gray-50 border-t border-gray-100">
       <div className="container max-w-6xl mx-auto py-12 md:py-16 px-4 md:px-6">
@@ -67,11 +62,11 @@ export function Footer() {
             <div className="space-y-3 mb-6">
               <div className="flex items-center gap-3 text-sm text-gray-600">
                 <Mail className="w-4 h-4" />
-                <span>hello@some.com</span>
+                <span>somelive@gmail.com</span>
               </div>
               <div className="flex items-center gap-3 text-sm text-gray-600">
-                <Phone className="w-4 h-4" />
-                <span>02-1234-5678</span>
+                <MapPin className="w-4 h-4" />
+                <span>경기도</span>
               </div>
             </div>
 
@@ -122,13 +117,7 @@ export function Footer() {
           <div className="flex items-center gap-4">
             <span className="text-gray-400 text-xs">Made in Seoul</span>
             
-            <button
-              onClick={scrollToTop}
-              className="p-2 bg-white border border-gray-200 rounded-full hover:bg-gray-50 hover:border-gray-300 transition-all duration-200"
-              aria-label="맨 위로 이동"
-            >
-              <ArrowUp className="w-4 h-4 text-gray-600" />
-            </button>
+            <ScrollToTopButton />
           </div>
         </div>
       </div>

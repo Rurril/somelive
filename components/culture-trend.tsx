@@ -79,7 +79,7 @@ export function CultureTrend({ posts }) {
               </div>
             </div>
             <h2 className="text-3xl md:text-2xl font-black text-black">
-              요즘에는 💜
+              CULTURE
             </h2>            
           </div>
           
