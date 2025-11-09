@@ -49,7 +49,7 @@ export const NewestSection = ({ latestPost }) => {
             <Heart className="w-4 h-4 text-pink-500" />
           </div>
           <h2 className="text-3xl md:text-2xl font-black text-black mb-4">
-            트렌드를 찾아볼 때는?
+            TODAY'S STORIES
           </h2>        
         </div>
 

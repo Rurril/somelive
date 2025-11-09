@@ -93,110 +93,90 @@ export function CultureTrend({ posts }) {
         </div>
 
         {posts && posts.length > 0 ? (
-          <div 
-            className="relative"
-            onMouseEnter={() => setIsAutoPlaying(false)}
-            onMouseLeave={() => setIsAutoPlaying(true)}
-          >
-            {/* Slider Container */}
-            <div className="overflow-hidden">
+          <>
+            {/* Desktop & Tablet Slider View */}
+            <div className="hidden md:block">
               <div 
-                className="flex transition-transform duration-700 ease-out"
-                style={{ transform: `translateX(-${currentSlide * (100 / visiblePosts)}%)` }}
+                className="relative"
+                onMouseEnter={() => setIsAutoPlaying(false)}
+                onMouseLeave={() => setIsAutoPlaying(true)}
               >
-                {posts.map((post, index) => (
+                <div className="overflow-hidden">
                   <div 
-                    key={post.id} 
-                    className="flex-shrink-0 px-3"
-                    style={{ width: `${100 / visiblePosts}%` }}
+                    className="flex transition-transform duration-700 ease-out"
+                    style={{ transform: `translateX(-${currentSlide * (100 / visiblePosts)}%)` }}
                   >
-                    <Link href={`/posts/${slugify(post.title)}`} className="group block h-full">
-                      <div className="relative overflow-hidden bg-white/90 backdrop-blur-sm h-full flex flex-col shadow-lg hover:shadow-2xl transition-all duration-500 hover:scale-105 border border-white/20">
-                        
-                        {/* Image Section */}
-                        <div className="relative aspect-[4/3] w-full overflow-hidden">
-                          <img
-                            src={post.image || "/placeholder.svg"}
-                            alt={post.title}
-                            className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                          />
-                          
-                          {/* Gradient overlay */}
-                          <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent opacity-0 transition-opacity duration-300" />
-                          
-                          {/* Trending badge
-                          <div className="absolute top-4 right-4 bg-gradient-to-r from-pink-500 to-violet-500 text-white px-3 py-1 rounded-full text-xs font-bold shadow-lg">
-                            TRENDING 🔥
-                          </div> */}
-                          
-                          {/* Category badge */}
-                          <div className="absolute top-4 left-4 bg-white/90 backdrop-blur-sm text-gray-800 px-3 py-1 rounded-full text-xs font-bold border border-white/30">
-                            {post.category}
-                          </div>
-                        </div>
-                        
-                        {/* Content Section */}
-                        <div className="p-6 flex flex-col flex-grow space-y-4">
-                          {/* Meta info */}
-                          <div className="flex items-center gap-3">
-                            <div className="flex items-center gap-1.5">
-                              <Calendar className="w-3.5 h-3.5 text-gray-400" />
-                              <span className="text-xs text-gray-500 font-medium">{post.date}</span>
+                    {posts.map((post) => (
+                      <div 
+                        key={post.id} 
+                        className="flex-shrink-0 px-3"
+                        style={{ width: `${100 / visiblePosts}%` }}
+                      >
+                        <Link href={`/posts/${slugify(post.title)}`} className="group block h-full">
+                          <div className="relative overflow-hidden bg-white/90 backdrop-blur-sm h-full flex flex-col shadow-lg hover:shadow-2xl transition-all duration-500 hover:scale-105 border border-white/20">
+                            <div className="relative aspect-[4/3] w-full overflow-hidden">
+                              <img src={post.image || "/placeholder.svg"} alt={post.title} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+                              <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent opacity-0 transition-opacity duration-300" />
+                              <div className="absolute top-4 left-4 bg-white/90 backdrop-blur-sm text-gray-800 px-3 py-1 rounded-full text-xs font-bold border border-white/30">{post.category}</div>
                             </div>
-                            <div className="flex items-center gap-1.5">
-                              <Eye className="w-3.5 h-3.5 text-pink-400" />
-                              <span className="text-xs text-pink-500 font-medium">HOT</span>
-                            </div>
-                          </div>
-                          
-                          {/* Title */}
-                          <h3 className="text-lg font-bold text-gray-900 leading-tight flex-grow line-clamp-2 group-hover:text-orange-600 transition-colors duration-300">
-                            {post.title}
-                          </h3>
-                          
-                          {/* Description */}
-                          <p 
-                            className="text-sm text-gray-600 line-clamp-2 leading-relaxed" 
-                            dangerouslySetInnerHTML={{ 
-                              __html: post.description.split("<br/><br/>")[1] || post.description 
-                            }} 
-                          />
-                          
-                          {/* Read more */}
-                          <div className="pt-2 border-t border-gray-100">
-                            <div className="flex items-center justify-between">
-                              <div className="flex gap-1">
-                                <div className="w-1.5 h-1.5 bg-pink-400 rounded-full animate-bounce"></div>
-                                <div className="w-1.5 h-1.5 bg-violet-400 rounded-full animate-bounce" style={{ animationDelay: '0.1s' }}></div>
-                                <div className="w-1.5 h-1.5 bg-orange-400 rounded-full animate-bounce" style={{ animationDelay: '0.2s' }}></div>
+                            <div className="p-6 flex flex-col flex-grow space-y-4">
+                              <div className="flex items-center gap-3">
+                                <div className="flex items-center gap-1.5">
+                                  <Calendar className="w-3.5 h-3.5 text-gray-400" />
+                                  <span className="text-xs text-gray-500 font-medium">{post.date}</span>
+                                </div>
+                                <div className="flex items-center gap-1.5">
+                                  <Eye className="w-3.5 h-3.5 text-pink-400" />
+                                  <span className="text-xs text-pink-500 font-medium">HOT</span>
+                                </div>
                               </div>
-                              <span className="text-violet-500 text-sm font-semibold group-hover:text-violet-600">
-                                자세히 보기 →
-                              </span>
+                              <h3 className="text-lg font-bold text-gray-900 leading-tight flex-grow line-clamp-2 group-hover:text-orange-600 transition-colors duration-300">{post.title}</h3>
+                              <p className="text-sm text-gray-600 line-clamp-2 leading-relaxed" dangerouslySetInnerHTML={{ __html: post.description.split("<br/><br/>")[1] || post.description }} />
+                              <div className="pt-2 border-t border-gray-100">
+                                <div className="flex items-center justify-between">
+                                  <div className="flex gap-1">
+                                    <div className="w-1.5 h-1.5 bg-pink-400 rounded-full animate-bounce"></div>
+                                    <div className="w-1.5 h-1.5 bg-violet-400 rounded-full animate-bounce" style={{ animationDelay: '0.1s' }}></div>
+                                    <div className="w-1.5 h-1.5 bg-orange-400 rounded-full animate-bounce" style={{ animationDelay: '0.2s' }}></div>
+                                  </div>
+                                  <span className="text-violet-500 text-sm font-semibold group-hover:text-violet-600">자세히 보기 →</span>
+                                </div>
+                              </div>
                             </div>
                           </div>
-                        </div>
+                        </Link>
                       </div>
-                    </Link>
+                    ))}
                   </div>
+                </div>
+                <button onClick={prevSlide} className="absolute top-1/2 -left-6 -translate-y-1/2 bg-white/90 backdrop-blur-sm text-gray-800 rounded-full shadow-lg p-3 hover:bg-white hover:scale-110 transition-all duration-300 z-10 hidden lg:block border border-white/30"><ChevronLeft size={20} /></button>
+                <button onClick={nextSlide} className="absolute top-1/2 -right-6 -translate-y-1/2 bg-white/90 backdrop-blur-sm text-gray-800 rounded-full shadow-lg p-3 hover:bg-white hover:scale-110 transition-all duration-300 z-10 hidden lg:block border border-white/30"><ChevronRight size={20} /></button>
+              </div>
+              <div className="flex justify-center mt-10 gap-2">
+                {Array.from({ length: Math.ceil(posts.length / visiblePosts) }).map((_, idx) => (
+                  <button key={idx} onClick={() => goToSlide(idx)} className={`h-2 rounded-full transition-all duration-300 ${ Math.floor(currentSlide / visiblePosts) === idx ? "w-8 bg-gradient-to-r from-violet-500 to-pink-500 shadow-lg" : "w-2 bg-gray-300 hover:bg-gray-400" }`} />
                 ))}
               </div>
             </div>
 
-            {/* Navigation Buttons */}
-            <button
-              onClick={prevSlide}
-              className="absolute top-1/2 -left-6 -translate-y-1/2 bg-white/90 backdrop-blur-sm text-gray-800 rounded-full shadow-lg p-3 hover:bg-white hover:scale-110 transition-all duration-300 z-10 hidden lg:block border border-white/30"
-            >
-              <ChevronLeft size={20} />
-            </button>
-            <button
-              onClick={nextSlide}
-              className="absolute top-1/2 -right-6 -translate-y-1/2 bg-white/90 backdrop-blur-sm text-gray-800 rounded-full shadow-lg p-3 hover:bg-white hover:scale-110 transition-all duration-300 z-10 hidden lg:block border border-white/30"
-            >
-              <ChevronRight size={20} />
-            </button>
-          </div>
+            {/* Mobile Grid View */}
+            <div className="md:hidden grid grid-cols-2 gap-4">
+              {posts.map((post) => (
+                <Link key={post.id} href={`/posts/${slugify(post.title)}`} className="group block">
+                  <div className="flex flex-col space-y-3">
+                    <div className="relative aspect-[4/3] w-full overflow-hidden rounded-lg shadow-md">
+                      <img src={post.image || "/placeholder.svg"} alt={post.title} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
+                    </div>
+                    <div className="flex flex-col space-y-1">
+                      <span className="text-xs font-semibold text-violet-600">{post.category}</span>
+                      <h3 className="text-sm font-bold text-gray-900 leading-tight line-clamp-2">{post.title}</h3>
+                      <span className="text-xs text-gray-500">{post.date}</span>
+                    </div>
+                  </div>
+                </Link>
+              ))}
+            </div>
+          </>
         ) : (
           <div className="text-center py-20">
             <div className="bg-white/80 backdrop-blur-sm p-12 border border-white/30 shadow-lg max-w-md mx-auto">
@@ -206,23 +186,6 @@ export function CultureTrend({ posts }) {
               <p className="text-gray-700 text-lg font-semibold mb-2">아직 준비중이에요! 🚀</p>
               <p className="text-sm text-gray-500">곧 멋진 문화 트렌드를 만나보세요</p>
             </div>
-          </div>
-        )}
-
-        {/* Dot Indicators */}
-        {posts && posts.length > 0 && (
-          <div className="flex justify-center mt-10 gap-2">
-            {Array.from({ length: Math.ceil(posts.length / visiblePosts) }).map((_, idx) => (
-              <button
-                key={idx}
-                onClick={() => goToSlide(idx)}
-                className={`h-2 rounded-full transition-all duration-300 ${
-                  Math.floor(currentSlide / visiblePosts) === idx 
-                    ? "w-8 bg-gradient-to-r from-violet-500 to-pink-500 shadow-lg" 
-                    : "w-2 bg-gray-300 hover:bg-gray-400"
-                }`}
-              />
-            ))}
           </div>
         )}
 
