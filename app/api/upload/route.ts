@@ -1,8 +1,5 @@
 import { NextResponse } from 'next/server';
 import admin from 'firebase-admin';
-
-import { NextResponse } from 'next/server';
-import admin from 'firebase-admin';
 import path from 'path';
 
 // Read the service account key from environment variables or a local file.
